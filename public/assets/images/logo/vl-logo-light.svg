@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 100" width="100%" height="100%" fill="none" role="img" aria-label="VL Consulting Partners">
+  <defs>
+    <!-- Gradiente Azul Corporativo para fondo claro -->
+    <linearGradient id="vlLogoBlueLight" x1="10%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%" stop-color="#123B60" />
+      <stop offset="60%" stop-color="#081C30" />
+      <stop offset="100%" stop-color="#051220" />
+    </linearGradient>
+
+    <!-- Gradiente Dorado Metálico -->
+    <linearGradient id="vlLogoGoldLight" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9C7729" />
+      <stop offset="35%" stop-color="#C9A45A" />
+      <stop offset="70%" stop-color="#DEBE6F" />
+      <stop offset="100%" stop-color="#9C7729" />
+    </linearGradient>
+
+    <filter id="lightShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.1" />
+    </filter>
+  </defs>
+
+  <!-- Monograma a la izquierda -->
+  <g transform="translate(4, -8) scale(0.65)" filter="url(#lightShadow)">
+    <!-- Letra V -->
+    <path d="M 22 28 C 22 24, 25 22, 36 22 L 72 22 C 60 26, 52 35, 52 46 L 76 112 L 104 38 C 104 28, 97 25, 88 22 L 126 22 C 117 26, 112 32, 108 42 L 76 130 C 73 138, 68 138, 65 130 L 26 42 C 22 33, 22 29, 22 28 Z"
+          fill="#123B60" opacity="0.15" />
+    <path d="M 24 30 C 24 26, 28 24, 38 24 L 70 24 C 62 28, 54 36, 54 48 L 76 110 L 102 40 C 102 30, 96 27, 89 24 L 122 24 C 115 28, 110 34, 106 43 L 75 128 C 73 134, 69 134, 67 128 L 29 44 C 25 35, 24 32, 24 30 Z"
+          fill="url(#vlLogoBlueLight)" />
+
+    <!-- Letra L -->
+    <path d="M 98 28 C 98 24, 101 22, 112 22 L 146 22 C 137 26, 130 32, 130 44 L 130 114 L 168 114 C 178 114, 182 108, 185 98 L 185 134 L 98 134 C 108 130, 114 124, 114 112 L 114 44 C 114 32, 107 26, 98 28 Z"
+          fill="#123B60" opacity="0.15" />
+    <path d="M 100 30 C 100 26, 103 24, 114 24 L 143 24 C 135 28, 132 34, 132 46 L 132 116 L 166 116 C 176 116, 180 110, 183 100 L 183 132 L 101 132 C 110 128, 116 122, 116 110 L 116 46 C 116 34, 109 28, 100 30 Z"
+          fill="url(#vlLogoBlueLight)" />
+
+    <!-- Trazo Diagonal Dorado -->
+    <path d="M 46 124 C 62 120, 80 102, 100 78 C 122 52, 142 34, 172 32 C 158 42, 142 56, 126 78 C 104 108, 80 126, 46 124 Z"
+          fill="url(#vlLogoGoldLight)" />
+  </g>
+
+  <!-- Tipografía Corporativa a la derecha -->
+  <g transform="translate(136, 0)">
+    <!-- VL CONSULTING PARTNERS -->
+    <text x="0" y="44" font-family="'Cinzel', 'Playfair Display', 'Times New Roman', Georgia, serif" font-size="28" font-weight="700" letter-spacing="4" fill="#081C30">
+      VL CONSULTING PARTNERS
+    </text>
+
+    <!-- Línea decorativa izquierda -->
+    <line x1="0" y1="64" x2="35" y2="64" stroke="url(#vlLogoGoldLight)" stroke-width="1.2" />
+
+    <!-- Lema: INTEGRIDAD, CONFIANZA Y CRECIMIENTO -->
+    <text x="44" y="67" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="9" font-weight="600" letter-spacing="4.5" fill="url(#vlLogoGoldLight)">
+      INTEGRIDAD, CONFIANZA Y CRECIMIENTO
+    </text>
+
+    <!-- Línea decorativa derecha -->
+    <line x1="345" y1="64" x2="380" y2="64" stroke="url(#vlLogoGoldLight)" stroke-width="1.2" />
+
+    <!-- Subtítulo de Servicios esenciales sutil -->
+    <text x="3" y="86" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="2.5" fill="#4B5E75">
+      AUDITORÍA  |  IMPUESTOS  |  CONSULTORÍA  |  CUMPLIMIENTO
+    </text>
+  </g>
+</svg>

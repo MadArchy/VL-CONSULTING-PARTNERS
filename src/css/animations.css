@@ -1,0 +1,53 @@
+/**
+ * VL CONSULTING PARTNERS - Animaciones y Microinteracciones
+ * Accesible con respeto estricto a prefers-reduced-motion
+ */
+
+/* Clases de entrada con IntersectionObserver */
+.fade-in-element {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.fade-in-element.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay para listas de tarjetas */
+.delay-1 { transition-delay: 100ms; }
+.delay-2 { transition-delay: 200ms; }
+.delay-3 { transition-delay: 300ms; }
+.delay-4 { transition-delay: 400ms; }
+
+/* Resplandor sutil dorado para acentos */
+@keyframes subtleGoldPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(201, 164, 90, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(201, 164, 90, 0.4);
+  }
+}
+
+.pulse-gold {
+  animation: subtleGoldPulse 4s infinite ease-in-out;
+}
+
+/* Respeto estricto a usuarios con reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .fade-in-element {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

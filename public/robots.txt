@@ -1,0 +1,5 @@
+# Robots.txt - VL Consulting Partners
+User-agent: *
+Allow: /
+
+Sitemap: https://www.example.com/sitemap.xml

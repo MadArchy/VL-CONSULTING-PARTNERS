@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="VL Consulting Partners">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#081C30"/>
+      <stop offset="100%" stop-color="#123B60"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <path d="M720 0 L1200 0 L1200 630 L420 630 Z" fill="#C9A45A" opacity="0.16"/>
+  <path d="M680 0 L760 0 L280 630 L200 630 Z" fill="#C9A45A"/>
+  <text x="80" y="270" fill="#F7F5F0" font-family="Georgia, serif" font-size="72" font-weight="700">VL CONSULTING PARTNERS</text>
+  <text x="80" y="340" fill="#C9A45A" font-family="Arial, sans-serif" font-size="34" letter-spacing="4">INTEGRIDAD, CONFIANZA Y CRECIMIENTO</text>
+</svg>

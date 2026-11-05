@@ -1,0 +1,112 @@
+/**
+ * VL CONSULTING PARTNERS - Tipografía y Jerarquía
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--color-text-main-light);
+  line-height: var(--leading-tight);
+  font-weight: 700;
+  letter-spacing: var(--tracking-normal);
+}
+
+.text-navy h1, .text-navy h2, .text-navy h3,
+.section-light h1, .section-light h2, .section-light h3,
+.section-light h4 {
+  color: var(--color-primary-navy);
+}
+
+/* Kicker de sección (ej. "NUESTROS SERVICIOS", "SOBRE NOSOTROS") */
+.section-kicker {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-gold-premium);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-3);
+}
+
+.section-kicker::before,
+.section-kicker::after {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-premium));
+}
+
+.section-kicker::after {
+  background: linear-gradient(90deg, var(--color-gold-premium), transparent);
+}
+
+.section-title {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--spacing-4);
+  max-width: 780px;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: var(--text-4xl);
+  }
+}
+
+.section-subtitle {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-muted-light);
+  max-width: 720px;
+}
+
+.section-light .section-subtitle {
+  color: var(--color-text-muted-dark);
+}
+
+/* Acentos Dorados y Énfasis */
+.text-gold {
+  color: var(--color-gold-premium);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, var(--color-gold-warm) 0%, var(--color-gold-premium) 50%, var(--color-gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.text-italic-gold {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-gold-warm);
+}
+
+.lead-text {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-muted-light);
+}
+
+.section-light .lead-text {
+  color: var(--color-text-body-dark);
+}
+
+/* Divisor horizontal decorativo dorado */
+.gold-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-gold-premium), var(--color-gold-warm), transparent);
+  margin: var(--spacing-4) 0;
+}
+
+.gold-divider.center {
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(90deg, transparent, var(--color-gold-premium), transparent);
+}

@@ -1,0 +1,135 @@
+/**
+ * VL CONSULTING PARTNERS - Design Tokens & Variables
+ * FASE 1: Sistema Visual Corporativo Premium
+ */
+
+:root {
+  /* ==========================================================================
+     Colores Corporativos Oficiales
+     ========================================================================== */
+  --color-primary-navy: #081C30;       /* Azul principal institucional */
+  --color-corporate-blue: #123B60;     /* Azul corporativo de acento */
+  --color-corporate-blue-light: #1D5485;
+  --color-deep-black: #080B10;         /* Negro de fondo nocturno y footer */
+  --color-deep-navy: #040E1A;          /* Navy profundo para contraste */
+  
+  /* Dorados Premium (Acento y Prestigio) */
+  --color-gold-premium: #C9A45A;       /* Dorado insignia */
+  --color-gold-warm: #E0C078;          /* Dorado cálido luminoso */
+  --color-gold-light: #F7E7BE;         /* Destellos dorados suaves */
+  --color-gold-dark: #9E7D36;          /* Sombra dorada metálica */
+  --color-gold-glow: rgba(201, 164, 90, 0.25);
+  --color-gold-border: rgba(201, 164, 90, 0.35);
+
+  /* Superficies Claras e Intermedias */
+  --color-ivory: #F7F5F0;              /* Marfil corporativo para fondos claros */
+  --color-white: #FFFFFF;
+  --color-surface-dark: #0A1E33;       /* Superficie de tarjetas oscuras */
+  --color-surface-card: #0D2642;
+  --color-surface-hover: #123358;
+
+  /* Neutros y Textos */
+  --color-text-main-light: #F7F5F0;    /* Texto principal sobre fondo oscuro */
+  --color-text-muted-light: #A3B5C9;   /* Texto secundario sobre fondo oscuro */
+  --color-text-dim: #6E849C;
+  --color-text-main-dark: #081C30;     /* Texto principal sobre fondo claro */
+  --color-text-body-dark: #2A3B4D;     /* Párrafos sobre fondo claro */
+  --color-text-muted-dark: #586B7E;    /* Texto secundario sobre fondo claro */
+  --color-border-dark: rgba(255, 255, 255, 0.08);
+  --color-border-card: rgba(201, 164, 90, 0.2);
+  --color-border-light: #E4DFD5;
+
+  /* Estados Funcionales */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+
+  /* ==========================================================================
+     Tipografía
+     ========================================================================== */
+  --font-serif: 'Cinzel', 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Escala de Tamaños */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.25rem;   /* 36px */
+  --text-5xl: 3rem;      /* 48px */
+  --text-6xl: 3.75rem;   /* 60px */
+
+  /* Alturas de línea */
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+  --leading-loose: 1.8;
+
+  /* Letter Spacing */
+  --tracking-tighter: -0.04em;
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.12em;
+  --tracking-widest: 0.22em;
+
+  /* ==========================================================================
+     Espaciado y Dimensiones
+     ========================================================================== */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+  --spacing-32: 8rem;
+
+  --container-max: 1240px;
+  --container-narrow: 900px;
+  --header-height: 84px;
+
+  /* ==========================================================================
+     Bordes y Radios
+     ========================================================================== */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 9999px;
+
+  /* ==========================================================================
+     Sombras y Elevaciones
+     ========================================================================== */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.18), 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 12px 28px rgba(4, 14, 26, 0.35), 0 4px 10px rgba(4, 14, 26, 0.2);
+  --shadow-gold: 0 4px 20px rgba(201, 164, 90, 0.25);
+  --shadow-gold-hover: 0 8px 30px rgba(201, 164, 90, 0.4);
+
+  /* ==========================================================================
+     Transiciones
+     ========================================================================== */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ==========================================================================
+     Z-Index
+     ========================================================================== */
+  --z-header: 100;
+  --z-modal: 200;
+  --z-toast: 300;
+}

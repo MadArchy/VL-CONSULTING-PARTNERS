@@ -1,0 +1,26 @@
+{
+  "name": "vl-consulting-partners",
+  "version": "1.0.0",
+  "description": "Plataforma web corporativa premium para VL Consulting Partners",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "serve": "node scripts/serve.js",
+    "start": "node scripts/serve.js",
+    "validate": "node scripts/validate.js"
+  },
+  "keywords": [
+    "consulting",
+    "auditoria",
+    "impuestos",
+    "cumplimiento",
+    "corporativo",
+    "asesoria-empresarial"
+  ],
+  "author": "VL Consulting Partners",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "marked": "^18.1.3"
+  }
+}

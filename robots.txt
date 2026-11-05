@@ -1,0 +1,10 @@
+# VL Consulting Partners — robots.txt
+# Replace www.example.com with the production domain before go-live.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.example.com/sitemap.xml
+
+# Disallow private/draft paths if added later:
+# Disallow: /borrador/
