@@ -8,6 +8,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { spawnSync } from 'node:child_process';
 import { marked } from 'marked';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -63,7 +64,15 @@ function syncAssets() {
 
   fs.cpSync(srcCss, pubCss, { recursive: true });
   fs.cpSync(srcJs, pubJs, { recursive: true });
+
+  // Exponer configuración institucional al frontend (fetch /content/site-config.json)
+  const pubContent = path.join(publicDir, 'content');
+  fs.mkdirSync(pubContent, { recursive: true });
+  fs.copyFileSync(configPath, path.join(pubContent, 'site-config.json'));
+
+  // Mantener logos fuente SVG en public (si existen en docs/references no se sobrescribe el original JPG)
   console.log('✓ Assets CSS y JS sincronizados en public/assets/');
+  console.log('✓ content/site-config.json expuesto en public/content/');
 
   // Sincronizar directorio dist para compatibilidad con plataformas de despliegue
   const distDir = path.join(rootDir, 'dist');
@@ -683,6 +692,15 @@ const articles = buildArticles();
 buildPublicationCatalog(articles);
 buildSitemap(articles);
 buildRobotsTxt();
+
+// Sanitizar datos no confirmados y alinear dominio desde site-config.json
+const sanitize = spawnSync(process.execPath, [path.join(__dirname, 'sanitize-public.js')], {
+  stdio: 'inherit'
+});
+if (sanitize.status !== 0) {
+  console.error('✗ Sanitización falló');
+  process.exit(1);
+}
 
 // Copiar todo el contenido final de public a dist
 const distDir = path.join(rootDir, 'dist');

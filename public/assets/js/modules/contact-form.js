@@ -95,9 +95,31 @@ export function initContactForms() {
         `;
       }
 
+      const endpoint =
+        (form.getAttribute('data-endpoint') || '').trim() ||
+        (window.VL_CONFIG && window.VL_CONFIG.api && window.VL_CONFIG.api.endpoint) ||
+        '';
+
+      // Sin endpoint configurado: no hacer fetch ni simular éxito.
+      if (!endpoint) {
+        feedbackContainer.innerHTML = `
+          <div class="alert alert-info" role="status" style="padding: 16px; background: rgba(18, 59, 96, 0.4); border: 1px solid var(--color-gold-premium); border-radius: 6px; color: var(--color-ivory); font-size: 0.875rem; margin-top: 16px; line-height: 1.5;">
+            <strong style="color: var(--color-gold-warm); display: block; margin-bottom: 4px;">Validación completada — envío pendiente</strong>
+            Los datos del formulario son válidos. La recepción en servidor aún no está conectada.
+            Configure <code>data-endpoint</code> o <code>content/site-config.json → api.endpoint</code> cuando exista un backend seguro.
+            <br><br>
+            <em>No se ha simulado un envío exitoso.</em>
+          </div>
+        `;
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+        }
+        return;
+      }
+
       try {
-        // Intento de conexión al endpoint del backend Spring Boot
-        const response = await fetch('/api/v1/contacto', {
+        const response = await fetch(endpoint, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -108,8 +130,8 @@ export function initContactForms() {
 
         if (response.ok) {
           feedbackContainer.innerHTML = `
-            <div class="alert alert-success" role="alert" style="padding: 14px; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; border-radius: 6px; color: #6EE7B7; font-size: 0.875rem; margin-top: 16px;">
-              <strong>Solicitud recibida:</strong> Su requerimiento ha sido registrado formalmente. Un socio consultor se comunicará a la brevedad.
+            <div class="alert alert-success" role="status" style="padding: 14px; background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; border-radius: 6px; color: #6EE7B7; font-size: 0.875rem; margin-top: 16px;">
+              <strong>Solicitud recibida:</strong> Su requerimiento ha sido registrado. El equipo se pondrá en contacto.
             </div>
           `;
           form.reset();
@@ -117,21 +139,9 @@ export function initContactForms() {
           throw new Error('Endpoint no disponible');
         }
       } catch (err) {
-        // Manejo transparente conforme a la especificación de Fase 1:
-        // No simular envíos exitosos falsos sin backend configurado.
         feedbackContainer.innerHTML = `
-          <div class="alert alert-info" role="alert" style="padding: 16px; background: rgba(18, 59, 96, 0.4); border: 1px solid var(--color-gold-premium); border-radius: 6px; color: var(--color-ivory); font-size: 0.875rem; margin-top: 16px; line-height: 1.5;">
-            <div style="display: flex; align-items: flex-start; gap: 10px;">
-              <span style="font-size: 1.25rem; color: var(--color-gold-warm);">ℹ️</span>
-              <div>
-                <strong style="color: var(--color-gold-warm); display: block; margin-bottom: 4px;">Información de Fase 1 (Frontend):</strong>
-                La validación de sus datos se completó con éxito. La interfaz de integración con el servicio backend Java Spring Boot (<code>POST /api/v1/contacto</code>) está arquitectada y preparada.
-                <br><br>
-                <em>Conforme a los lineamientos del proyecto, no se simulan confirmaciones ficticias mientras el servidor backend de producción no esté activo.</em>
-                <br><br>
-                Cuando exista un canal de contacto oficial confirmado por la firma, se publicará aquí. Mientras tanto, use el formulario una vez conectado el backend.
-              </div>
-            </div>
+          <div class="alert alert-error" role="alert" style="padding: 16px; background: rgba(239, 68, 68, 0.12); border: 1px solid #EF4444; border-radius: 6px; color: #FCA5A5; font-size: 0.875rem; margin-top: 16px; line-height: 1.5;">
+            No fue posible enviar la consulta en este momento. Intente más tarde.
           </div>
         `;
       } finally {

@@ -42,6 +42,12 @@ htmlFiles.forEach(filePath => {
   const relPath = path.relative(publicDir, filePath);
   const content = fs.readFileSync(filePath, 'utf8');
 
+  // Plantillas de captura OG no son páginas publicables
+  if (relPath.includes(`${path.sep}og${path.sep}`) || relPath.endsWith('og-template.html')) {
+    console.log(`  · omitido (plantilla): ${relPath}`);
+    return;
+  }
+
   // Check 1: DOCTYPE
   if (!content.includes('<!DOCTYPE html>')) {
     console.error(`  ❌ [${relPath}]: Falta <!DOCTYPE html>`);
@@ -76,6 +82,11 @@ htmlFiles.forEach(filePath => {
   const hrefMatches = content.matchAll(/href="([^"#:]+?)(?:#[^"]*)?"/g);
   for (const match of hrefMatches) {
     const target = match[1];
+    if (target.includes('${')) {
+      console.error(`  ❌ [${relPath}]: href con placeholder no resuelto '${target}'`);
+      errorCount++;
+      continue;
+    }
     if (target.startsWith('http://') || target.startsWith('https://') || target.startsWith('mailto:') || target.startsWith('tel:')) {
       continue;
     }

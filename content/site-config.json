@@ -6,7 +6,9 @@
     "shortDescription": "Firma de consultoría empresarial especializada en auditoría, impuestos, asesoría estratégica y cumplimiento normativo.",
     "longDescription": "Acompañamos a organizaciones en la toma de decisiones críticas, la gestión de riesgos y la generación de valor sostenible.",
     "year": 2026,
-    "url": "https://www.example.com"
+    "url": "https://www.example.com",
+    "urlConfirmed": false,
+    "notes": "Sustituir brand.url por el dominio oficial solo cuando esté confirmado y apuntado. No usar dominios inventados en producción."
   },
   "contact": {
     "email": "",

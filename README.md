@@ -1,7 +1,7 @@
 # VL Consulting Partners — Plataforma Web Corporativa
 
 > **Lema:** *Integridad, confianza y crecimiento.*  
-> **Fase 1:** Arquitectura, identidad visual, sistema de publicaciones y desarrollo frontend estático premium.
+> **Fase 3:** Consolidación, validación local y preparación staging (ver `VL_CONSULTING_FASE3_VALIDACION.md`).
 
 ---
 
@@ -37,7 +37,11 @@ Abra su navegador en: `http://localhost:3000`
 ### 5. Auditoría Técnica Automatizada (Validación)
 ```bash
 npm run validate
+npm run test:e2e
 ```
+
+Informes: `VL_CONSULTING_PRODUCTION_READINESS.md`, `VL_CONSULTING_FASE3_VALIDACION.md`.  
+Dominio y contacto oficiales se configuran solo en `content/site-config.json` (no inventar datos).
 
 ---
 

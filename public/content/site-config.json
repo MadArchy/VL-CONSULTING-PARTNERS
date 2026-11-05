@@ -1,0 +1,116 @@
+{
+  "brand": {
+    "name": "VL Consulting Partners",
+    "legalName": "VL Consulting Partners",
+    "lema": "Integridad, confianza y crecimiento",
+    "shortDescription": "Firma de consultoría empresarial especializada en auditoría, impuestos, asesoría estratégica y cumplimiento normativo.",
+    "longDescription": "Acompañamos a organizaciones en la toma de decisiones críticas, la gestión de riesgos y la generación de valor sostenible.",
+    "year": 2026,
+    "url": "https://www.example.com",
+    "urlConfirmed": false,
+    "notes": "Sustituir brand.url por el dominio oficial solo cuando esté confirmado y apuntado. No usar dominios inventados en producción."
+  },
+  "contact": {
+    "email": "",
+    "phone": "",
+    "phoneDisplay": "",
+    "address": "",
+    "city": "",
+    "country": "",
+    "businessHours": "",
+    "isOfficialContactConfirmed": false,
+    "whatsapp": {
+      "enabled": false,
+      "number": "",
+      "defaultMessage": "Hola, deseo agendar una consulta con el equipo de VL Consulting Partners."
+    },
+    "notes": "No publicar teléfono, dirección, correo ni horarios hasta confirmación oficial de la firma."
+  },
+  "social": {
+    "linkedin": "",
+    "youtube": "",
+    "twitter": ""
+  },
+  "api": {
+    "endpoint": "",
+    "serviceName": "Contact API (pending Java/backend integration)",
+    "environment": "frontend-only"
+  },
+  "metrics": [],
+  "services": [
+    {
+      "id": "auditoria",
+      "title": "Auditoría",
+      "slug": "auditoria.html",
+      "shortDescription": "Evaluamos su información financiera con objetividad, rigor y enfoque en la mejora continua.",
+      "fullDescription": "Revisión independiente orientada a la confiabilidad de la información financiera y a la mejora de controles internos.",
+      "icon": "chart-bars",
+      "badge": "Aseguramiento y Control"
+    },
+    {
+      "id": "impuestos",
+      "title": "Impuestos",
+      "slug": "impuestos.html",
+      "shortDescription": "Planeación, cumplimiento y acompañamiento tributario con visión de negocio.",
+      "fullDescription": "Acompañamiento tributario para cumplir obligaciones y tomar decisiones fiscales informadas.",
+      "icon": "coins",
+      "badge": "Eficiencia Fiscal"
+    },
+    {
+      "id": "consultoria",
+      "title": "Consultoría",
+      "slug": "consultoria.html",
+      "shortDescription": "Asesoría en estrategia, procesos, finanzas y gestión de riesgos.",
+      "fullDescription": "Apoyo estratégico y operativo para optimizar procesos, gobernanza y crecimiento empresarial.",
+      "icon": "trending-up",
+      "badge": "Estrategia de Crecimiento"
+    },
+    {
+      "id": "cumplimiento",
+      "title": "Cumplimiento",
+      "slug": "cumplimiento.html",
+      "shortDescription": "Diseño e implementación de marcos de cumplimiento normativo y corporativo.",
+      "fullDescription": "Marcos de cumplimiento que reducen riesgos regulatorios y reputacionales.",
+      "icon": "shield-check",
+      "badge": "Gobierno y Riesgos"
+    }
+  ],
+  "sectors": [
+    {
+      "id": "empresas",
+      "name": "Empresas privadas",
+      "description": "Apoyo en control interno, reporting y decisiones fiscales y estratégicas.",
+      "icon": "building"
+    },
+    {
+      "id": "grupos",
+      "name": "Grupos y holdings",
+      "description": "Coordinación de revisiones, políticas y cumplimiento en estructuras complejas.",
+      "icon": "layers"
+    },
+    {
+      "id": "crecimiento",
+      "name": "Organizaciones en crecimiento",
+      "description": "Ordenamiento de procesos, riesgos y gobierno corporativo a medida que escalan.",
+      "icon": "trending-up"
+    }
+  ],
+  "differentiators": [
+    {
+      "title": "Enfoque ejecutivo",
+      "description": "Comunicación precisa para direcciones y comités, sin ruido ni jerga innecesaria."
+    },
+    {
+      "title": "Metodología ordenada",
+      "description": "Procesos estructurados que facilitan el seguimiento, la evidencia y la toma de decisiones."
+    },
+    {
+      "title": "Visión integral",
+      "description": "Auditoría, impuestos, consultoría y cumplimiento coordinados cuando el contexto lo requiere."
+    },
+    {
+      "title": "Confidencialidad",
+      "description": "Tratamiento cuidadoso de la información sensible de cada organización."
+    }
+  ]
+}

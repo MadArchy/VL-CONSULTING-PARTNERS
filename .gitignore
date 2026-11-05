@@ -11,3 +11,7 @@ dist/
 .lighthouseci/
 *.local
 .DS_Store
+test-results/
+docs/playwright-report/
+playwright-report/
+blob-report/

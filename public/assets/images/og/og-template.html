@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>OG VL Consulting Partners</title>
+  <style>
+    html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+    .canvas {
+      width: 1200px; height: 630px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      background: linear-gradient(135deg, #081C30 0%, #123B60 70%, #0A1E33 100%);
+      color: #F7F5F0;
+      font-family: Georgia, "Times New Roman", serif;
+      position: relative;
+    }
+    .canvas::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 58%, rgba(201,164,90,0.9) 58.2%, rgba(201,164,90,0.9) 62%, transparent 62.2%);
+      pointer-events: none;
+    }
+    .left { padding: 72px 64px; position: relative; z-index: 1; }
+    .logo { width: 280px; height: auto; margin-bottom: 48px; }
+    .lemma { color: #C9A45A; letter-spacing: 0.12em; text-transform: uppercase; font-family: Arial, sans-serif; font-size: 18px; margin-bottom: 18px; }
+    h1 { font-size: 54px; line-height: 1.1; margin: 0 0 18px; font-weight: 700; }
+    p { font-family: Arial, sans-serif; font-size: 22px; line-height: 1.4; opacity: 0.9; max-width: 520px; }
+    .right { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; }
+    .mono { width: 280px; height: 250px; }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="left">
+      <img class="logo" src="../logo/vl-logo-light.svg" alt="VL Consulting Partners">
+      <div class="lemma">Integridad, confianza y crecimiento</div>
+      <h1>Consultoría empresarial con rigor ejecutivo</h1>
+      <p>Auditoría · Impuestos · Consultoría · Cumplimiento</p>
+    </div>
+    <div class="right">
+      <img class="mono" src="../logo/vl-monogram.svg" alt="">
+    </div>
+  </div>
+</body>
+</html>

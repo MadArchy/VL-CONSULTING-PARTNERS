@@ -100,13 +100,24 @@
   align-items: center;
   gap: var(--spacing-3);
   text-decoration: none;
+  flex-shrink: 0;
+  min-width: 0;
 }
 
 .header-logo img,
 .header-logo svg {
-  height: 52px;
+  height: 44px;
   width: auto;
+  max-width: min(260px, 58vw);
   transition: transform var(--transition-fast);
+}
+
+@media (min-width: 1024px) {
+  .header-logo img,
+  .header-logo svg {
+    height: 48px;
+    max-width: 280px;
+  }
 }
 
 .header-logo:hover img,
@@ -203,16 +214,35 @@
 
 /* Botón Hamburguesa Móvil */
 .mobile-menu-btn {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 32px;
-  height: 26px;
+  width: 44px;
+  height: 44px;
   background: transparent;
-  border: none;
+  border: 1px solid rgba(201, 164, 90, 0.35);
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  padding: 0;
+  padding: 10px 8px;
   z-index: 120;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-actions .btn-sm {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .header-actions .btn-sm {
+    display: inline-flex;
+  }
 }
 
 @media (min-width: 1024px) {
