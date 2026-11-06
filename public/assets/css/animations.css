@@ -138,6 +138,10 @@ body.has-intro {
 .page-intro img {
   width: min(460px, 74vw);
   height: auto;
+  filter:
+    drop-shadow(0 0 1px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.45))
+    drop-shadow(0 0 22px rgba(255, 255, 255, 0.22));
   animation:
     introMark 1.05s cubic-bezier(0.16, 1, 0.3, 1) both,
     introMarkLeave 0.7s cubic-bezier(0.16, 1, 0.3, 1) 2s forwards;
