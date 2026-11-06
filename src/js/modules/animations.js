@@ -4,32 +4,50 @@
  */
 
 export function initAnimations() {
-  // Asegurar que cualquier elemento en el hero sea visible de inmediato
-  document.querySelectorAll('.hero-content, .hero-content.fade-in-element').forEach(el => {
+  document.querySelectorAll('.hero-content, .hero-content.fade-in-element').forEach((el) => {
     el.classList.add('is-visible');
   });
 
-  // Si el usuario prefiere movimiento reducido, salir marcando todo visible
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReducedMotion) {
-    document.querySelectorAll('.fade-in-element').forEach(el => el.classList.add('is-visible'));
+    document.querySelectorAll('.fade-in-element').forEach((el) => el.classList.add('is-visible'));
     return;
   }
 
   const elements = document.querySelectorAll('.fade-in-element:not(.hero-content)');
   if (!elements.length) return;
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -40px 0px'
+  const reveal = (el) => el.classList.add('is-visible');
+
+  // Reveal inmediato de lo ya visible o cercano al viewport (capturas / SSR-like)
+  elements.forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 1.35) reveal(el);
   });
 
-  elements.forEach(el => observer.observe(el));
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          reveal(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.08,
+      rootMargin: '80px 0px 80px 0px'
+    }
+  );
+
+  elements.forEach((el) => {
+    if (!el.classList.contains('is-visible')) observer.observe(el);
+  });
+
+  // Fallback: si el usuario no interactúa, revelar el resto tras idle
+  window.setTimeout(() => {
+    elements.forEach((el) => {
+      if (!el.classList.contains('is-visible')) reveal(el);
+    });
+  }, 2500);
 }

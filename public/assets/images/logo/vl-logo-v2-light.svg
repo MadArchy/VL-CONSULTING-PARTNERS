@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 100" width="100%" height="100%" fill="none" role="img" aria-label="VL Consulting Partners">
+  <defs>
+    <linearGradient id="vlCharcoalV2L" x1="10%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%" stop-color="#373A40"/>
+      <stop offset="50%" stop-color="#282B30"/>
+      <stop offset="100%" stop-color="#17191D"/>
+    </linearGradient>
+    <linearGradient id="vlRedV2L" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8C0D1D"/>
+      <stop offset="50%" stop-color="#B51226"/>
+      <stop offset="100%" stop-color="#D62C43"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(4, -8) scale(0.65)">
+    <path d="M 24 30 C 24 26, 28 24, 38 24 L 70 24 C 62 28, 54 36, 54 48 L 76 110 L 102 40 C 102 30, 96 27, 89 24 L 122 24 C 115 28, 110 34, 106 43 L 75 128 C 73 134, 69 134, 67 128 L 29 44 C 25 35, 24 32, 24 30 Z" fill="url(#vlCharcoalV2L)"/>
+    <path d="M 100 30 C 100 26, 103 24, 114 24 L 143 24 C 135 28, 132 34, 132 46 L 132 116 L 166 116 C 176 116, 180 110, 183 100 L 183 132 L 101 132 C 110 128, 116 122, 116 110 L 116 46 C 116 34, 109 28, 100 30 Z" fill="url(#vlCharcoalV2L)"/>
+    <path d="M 46 124 C 62 120, 80 102, 100 78 C 122 52, 142 34, 172 32 C 158 42, 142 56, 126 78 C 104 108, 80 126, 46 124 Z" fill="url(#vlRedV2L)"/>
+  </g>
+  <g transform="translate(136, 0)">
+    <text x="0" y="44" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700" letter-spacing="4" fill="#202227">VL CONSULTING PARTNERS</text>
+    <line x1="0" y1="64" x2="35" y2="64" stroke="#B51226" stroke-width="1.5"/>
+    <text x="44" y="67" font-family="Arial, sans-serif" font-size="9" font-weight="600" letter-spacing="4" fill="#B51226">INTEGRIDAD, CONFIANZA Y CRECIMIENTO</text>
+    <line x1="345" y1="64" x2="380" y2="64" stroke="#B51226" stroke-width="1.5"/>
+    <text x="3" y="86" font-family="Arial, sans-serif" font-size="8" font-weight="500" letter-spacing="2.5" fill="#626770">AUDITORÍA  |  IMPUESTOS  |  CONSULTORÍA  |  CUMPLIMIENTO</text>
+  </g>
+</svg>

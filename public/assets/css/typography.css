@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   letter-spacing: var(--tracking-widest);
   text-transform: uppercase;
-  color: var(--color-gold-premium);
+  color: var(--vl-primary);
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-3);
@@ -38,11 +38,11 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   width: 28px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-gold-premium));
+  background: linear-gradient(90deg, transparent, var(--vl-primary));
 }
 
 .section-kicker::after {
-  background: linear-gradient(90deg, var(--color-gold-premium), transparent);
+  background: linear-gradient(90deg, var(--vl-primary), transparent);
 }
 
 .section-title {
@@ -70,11 +70,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Acentos Dorados y Énfasis */
 .text-gold {
-  color: var(--color-gold-premium);
+  color: var(--vl-primary);
 }
 
 .text-gold-gradient {
-  background: linear-gradient(135deg, var(--color-gold-warm) 0%, var(--color-gold-premium) 50%, var(--color-gold-dark) 100%);
+  background: linear-gradient(135deg, var(--color-gold-warm) 0%, var(--vl-primary) 50%, var(--color-gold-dark) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
   font-weight: 500;
-  color: var(--color-gold-warm);
+  color: var(--color-crimson-bright);
 }
 
 .lead-text {
@@ -101,12 +101,12 @@ h1, h2, h3, h4, h5, h6 {
 .gold-divider {
   width: 60px;
   height: 2px;
-  background: linear-gradient(90deg, var(--color-gold-premium), var(--color-gold-warm), transparent);
+  background: linear-gradient(90deg, var(--vl-primary), var(--color-gold-warm), transparent);
   margin: var(--spacing-4) 0;
 }
 
 .gold-divider.center {
   margin-left: auto;
   margin-right: auto;
-  background: linear-gradient(90deg, transparent, var(--color-gold-premium), transparent);
+  background: linear-gradient(90deg, transparent, var(--vl-primary), transparent);
 }

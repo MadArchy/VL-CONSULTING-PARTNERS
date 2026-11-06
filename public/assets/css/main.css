@@ -5,106 +5,106 @@
 @import './components.css';
 @import './animations.css';
 
-/* Estilos específicos de secciones clave */
-
 /* ==========================================================================
-   Hero Principal (Mockup exacto)
+   Hero V2 — panel oscuro + fotografía corporativa
    ========================================================================== */
 .hero-section {
   position: relative;
-  min-height: 90vh;
+  min-height: 88vh;
   display: flex;
   align-items: center;
   padding-top: calc(var(--header-height) + var(--spacing-8));
   padding-bottom: var(--spacing-16);
-  background-color: var(--color-primary-navy);
+  background-color: var(--vl-black);
   overflow: hidden;
 }
 
-.hero-bg-wrapper {
+.hero-section::before {
+  content: '';
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   width: 100%;
-  z-index: 1;
+  background: linear-gradient(100deg, rgba(23, 25, 29, 0.58) 0%, rgba(23, 25, 29, 0.28) 36%, rgba(23, 25, 29, 0.06) 58%, transparent 76%);
+  z-index: 2;
   pointer-events: none;
 }
 
 @media (min-width: 1024px) {
-  .hero-bg-wrapper {
-    width: 60%;
+  .hero-section::before {
+    background: linear-gradient(100deg, rgba(23, 25, 29, 0.5) 0%, rgba(23, 25, 29, 0.22) 34%, transparent 62%);
   }
+}
+
+.hero-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bg-wrapper picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-bg-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center right;
-  opacity: 0.35;
-  filter: contrast(1.05) brightness(0.9);
+  object-position: center center;
+  opacity: 1;
+  filter: none;
 }
 
-@media (min-width: 1024px) {
-  .hero-bg-image {
-    opacity: 0.85;
-  }
-}
-
-/* Gradientes para fundir la imagen con el fondo corporativo */
 .hero-gradient-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #081C30 0%, rgba(8, 28, 48, 0.95) 30%, rgba(8, 28, 48, 0.6) 60%, rgba(8, 28, 48, 0.3) 100%);
-  z-index: 2;
+  background:
+    linear-gradient(90deg, rgba(23, 25, 29, 0.48) 0%, rgba(23, 25, 29, 0.16) 42%, transparent 68%),
+    linear-gradient(180deg, rgba(23, 25, 29, 0.12) 0%, transparent 24%, rgba(23, 25, 29, 0.16) 100%);
+  z-index: 1;
 }
 
-@media (max-width: 1023px) {
+@media (min-width: 1024px) {
   .hero-gradient-overlay {
-    background: linear-gradient(180deg, rgba(8, 28, 48, 0.95) 0%, rgba(8, 28, 48, 0.85) 100%);
+    background:
+      linear-gradient(90deg, rgba(23, 25, 29, 0.42) 0%, rgba(23, 25, 29, 0.1) 38%, transparent 64%),
+      linear-gradient(180deg, transparent 70%, rgba(23, 25, 29, 0.18) 100%);
   }
 }
 
 .hero-content {
   position: relative;
   z-index: 3;
-  max-width: 680px;
+  max-width: 640px;
 }
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: var(--text-3xl);
+  font-size: clamp(1.75rem, 4vw, 3rem);
   font-weight: 700;
-  line-height: var(--leading-tight);
-  color: var(--color-text-main-light);
+  line-height: 1.35;
+  color: var(--vl-text-light);
   margin-bottom: var(--spacing-6);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
 }
 
-@media (min-width: 640px) {
-  .hero-title {
-    font-size: var(--text-4xl);
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-title {
-    font-size: var(--text-5xl);
-  }
-}
-
-.hero-title .highlight-gold {
+.hero-title .highlight-gold,
+.hero-title .highlight-red {
   font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
   font-weight: 500;
-  color: var(--color-gold-warm);
+  color: var(--vl-primary-light);
   display: inline;
 }
 
 .hero-divider {
   width: 80px;
   height: 2px;
-  background: linear-gradient(90deg, var(--color-gold-premium), transparent);
+  background: linear-gradient(90deg, var(--vl-primary), transparent);
   margin-bottom: var(--spacing-6);
 }
 
@@ -113,7 +113,8 @@
   line-height: var(--leading-relaxed);
   color: var(--color-text-muted-light);
   margin-bottom: var(--spacing-8);
-  max-width: 620px;
+  max-width: 28rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.95), 0 2px 14px rgba(0, 0, 0, 0.85);
 }
 
 .hero-actions {
@@ -124,8 +125,133 @@
 }
 
 /* ==========================================================================
-   Separador Dorado Curvo Orgánico (Entre secciones)
+   Secciones V2 — mármol, about, pilares, publicaciones light
    ========================================================================== */
+.section-marble {
+  background-color: var(--vl-off-white);
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(233, 234, 236, 0.9) 0%, transparent 55%),
+    linear-gradient(180deg, var(--vl-white) 0%, var(--vl-marble) 100%);
+  color: var(--vl-text-dark);
+}
+
+.section-marble .section-title,
+.section-marble h2,
+.section-marble h3 {
+  color: var(--vl-text-dark);
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-10);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .about-layout {
+    grid-template-columns: 1.05fr 1fr;
+    gap: var(--spacing-16);
+  }
+}
+
+.about-media {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  min-height: 320px;
+  box-shadow: var(--shadow-lg);
+}
+
+.about-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+.about-media::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12%;
+  bottom: 12%;
+  width: 4px;
+  background: var(--vl-primary);
+}
+
+.about-copy .red-rule {
+  width: 64px;
+  height: 3px;
+  background: var(--vl-primary);
+  margin: var(--spacing-4) 0 var(--spacing-6);
+}
+
+.about-values {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-8);
+}
+
+@media (min-width: 640px) {
+  .about-values {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.about-value-card {
+  padding: var(--spacing-5);
+  background: var(--vl-white);
+  border: 1px solid var(--vl-border-light);
+  border-top: 3px solid var(--vl-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.about-value-card h3 {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  color: var(--vl-text-dark);
+  margin-bottom: var(--spacing-2);
+}
+
+.about-value-card p {
+  font-size: var(--text-sm);
+  color: var(--vl-text-muted);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+.publications-section .article-card {
+  background: var(--vl-white);
+  border: 1px solid var(--vl-border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.publications-section .article-card:hover {
+  border-color: rgba(181, 18, 38, 0.35);
+  box-shadow: var(--shadow-md);
+}
+
+.publications-section .article-card-title,
+.publications-section .article-card-title a {
+  color: var(--vl-text-dark);
+}
+
+.publications-section .article-card-excerpt {
+  color: var(--vl-text-muted);
+}
+
+.publications-section .article-meta {
+  border-top-color: var(--vl-border-light);
+  color: var(--vl-text-muted);
+}
+
+.publications-section .article-card-cover {
+  background-color: var(--vl-marble);
+}
+
 .curve-divider {
   width: 100%;
   overflow: hidden;
@@ -145,12 +271,9 @@
   }
 }
 
-/* ==========================================================================
-   Sección Sectores (Cards o Pills de Sectores)
-   ========================================================================== */
 .sector-card {
-  background: rgba(18, 59, 96, 0.15);
-  border: 1px solid rgba(201, 164, 90, 0.15);
+  background: var(--vl-charcoal);
+  border: 1px solid var(--vl-border-dark);
   border-radius: var(--radius-md);
   padding: var(--spacing-6);
   transition: all var(--transition-normal);
@@ -159,10 +282,9 @@
 }
 
 .sector-card:hover {
-  background: rgba(18, 59, 96, 0.4);
-  border-color: var(--color-gold-premium);
+  border-color: var(--vl-primary);
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(4, 14, 26, 0.3);
+  box-shadow: var(--shadow-lg);
 }
 
 .sector-icon {
@@ -171,7 +293,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-gold-warm);
+  color: var(--vl-primary-light);
   margin-bottom: var(--spacing-4);
 }
 
@@ -179,7 +301,7 @@
   font-family: var(--font-serif);
   font-size: var(--text-lg);
   font-weight: 700;
-  color: var(--color-text-main-light);
+  color: var(--vl-text-light);
   margin-bottom: var(--spacing-2);
 }
 
@@ -189,12 +311,9 @@
   line-height: var(--leading-relaxed);
 }
 
-/* ==========================================================================
-   Página de Publicaciones (Blog / Actualidad)
-   ========================================================================== */
 .article-card {
-  background: var(--color-surface-card);
-  border: 1px solid var(--color-border-card);
+  background: var(--vl-charcoal);
+  border: 1px solid var(--vl-border-dark);
   border-radius: var(--radius-md);
   overflow: hidden;
   display: flex;
@@ -204,15 +323,15 @@
 
 .article-card:hover {
   transform: translateY(-6px);
-  border-color: var(--color-gold-premium);
-  box-shadow: 0 16px 32px rgba(4, 14, 26, 0.4);
+  border-color: var(--vl-primary);
+  box-shadow: var(--shadow-lg);
 }
 
 .article-card-cover {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  background-color: var(--color-deep-navy);
+  background-color: var(--vl-black);
 }
 
 .article-card-body {
@@ -227,7 +346,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: var(--tracking-wider);
-  color: var(--color-gold-premium);
+  color: var(--vl-primary-light);
   margin-bottom: var(--spacing-2);
 }
 
@@ -235,9 +354,18 @@
   font-family: var(--font-serif);
   font-size: var(--text-xl);
   font-weight: 700;
-  color: var(--color-text-main-light);
+  color: var(--vl-text-light);
   margin-bottom: var(--spacing-3);
   line-height: var(--leading-snug);
+}
+
+.article-card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.article-card-title a:hover {
+  color: var(--vl-primary-light);
 }
 
 .article-card-excerpt {
@@ -257,4 +385,17 @@
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: var(--spacing-3);
   margin-top: auto;
+  gap: var(--spacing-3);
+  flex-wrap: wrap;
+}
+
+.page-hero {
+  padding-top: calc(var(--header-height) + var(--spacing-12));
+  padding-bottom: var(--spacing-12);
+  background: linear-gradient(160deg, var(--vl-black) 0%, var(--vl-charcoal) 100%);
+  border-bottom: 3px solid var(--vl-primary);
+}
+
+.page-hero .section-title {
+  color: var(--vl-text-light);
 }

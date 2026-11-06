@@ -35,13 +35,12 @@
 .delay-3 { transition-delay: 300ms; }
 .delay-4 { transition-delay: 400ms; }
 
-/* Resplandor sutil dorado para acentos */
 @keyframes subtleGoldPulse {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(201, 164, 90, 0.2);
+    box-shadow: 0 0 15px rgba(181, 18, 38, 0.2);
   }
   50% {
-    box-shadow: 0 0 25px rgba(201, 164, 90, 0.4);
+    box-shadow: 0 0 25px rgba(181, 18, 38, 0.35);
   }
 }
 

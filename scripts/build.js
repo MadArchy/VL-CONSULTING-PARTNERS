@@ -122,14 +122,11 @@ function buildSitemap(articles) {
   const baseUrl = config.brand.url;
   const staticPages = [
     '',
-    'nosotros.html',
     'auditoria.html',
     'impuestos.html',
     'consultoria.html',
     'cumplimiento.html',
-    'sectores.html',
     'publicaciones.html',
-    'contacto.html',
     'privacidad.html',
     'terminos.html'
   ];
@@ -214,7 +211,7 @@ function generateArticleTemplate(article, config) {
       "name": "${config.brand.name}",
       "logo": {
         "@type": "ImageObject",
-        "url": "${config.brand.url}/assets/images/logo/vl-logo.svg"
+        "url": "${config.brand.url}/assets/images/logo/vl-logo-header.png"
       }
     },
     "mainEntityOfPage": {
@@ -230,14 +227,12 @@ function generateArticleTemplate(article, config) {
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a href="../index.html" class="header-logo" aria-label="VL Consulting Partners - Volver al Inicio">
-        <img src="../assets/images/logo/vl-logo.svg" alt="VL Consulting Partners Logo" width="220" height="42">
+        <img src="../assets/images/logo/vl-logo-header.png" alt="VL Consulting Partners Logo" width="220" height="42">
       </a>
 
-      <nav class="nav-desktop" aria-label="Navegación principal">
+            <nav class="nav-desktop" aria-label="Navegación principal">
         <a href="../index.html" class="nav-link">Inicio</a>
-        <a href="../nosotros.html" class="nav-link">Nosotros</a>
-        
-        <div class="nav-item-dropdown">
+<div class="nav-item-dropdown">
           <a href="../index.html#servicios" class="nav-link" aria-haspopup="true">Servicios ▾</a>
           <div class="dropdown-menu">
             <a href="../auditoria.html" class="dropdown-link">Auditoría Financiera y Procesos</a>
@@ -246,14 +241,11 @@ function generateArticleTemplate(article, config) {
             <a href="../cumplimiento.html" class="dropdown-link">Cumplimiento y Regulación</a>
           </div>
         </div>
-
-        <a href="../sectores.html" class="nav-link">Sectores</a>
-        <a href="../publicaciones.html" class="nav-link active">Actualidad</a>
-        <a href="../contacto.html" class="nav-link">Contacto</a>
-      </nav>
+<a href="../publicaciones.html" class="nav-link active">Publicaciones</a>
+</nav>
 
       <div style="display: flex; align-items: center; gap: 1rem;">
-        <a href="../contacto.html" class="btn btn-gold btn-sm" data-open-modal="agenda-modal">
+        <a href="#" class="btn btn-gold btn-sm" data-open-modal="agenda-modal">
           Agenda una consulta <span class="btn-arrow">›</span>
         </a>
         <button class="mobile-menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false">
@@ -266,24 +258,21 @@ function generateArticleTemplate(article, config) {
   <div class="mobile-backdrop"></div>
   <aside class="mobile-nav-drawer" aria-label="Menú móvil">
     <a href="../index.html" class="mobile-nav-link">Inicio</a>
-    <a href="../nosotros.html" class="mobile-nav-link">Nosotros</a>
-    <a href="../auditoria.html" class="mobile-nav-link">Auditoría</a>
+<a href="../auditoria.html" class="mobile-nav-link">Auditoría</a>
     <a href="../impuestos.html" class="mobile-nav-link">Impuestos</a>
     <a href="../consultoria.html" class="mobile-nav-link">Consultoría</a>
     <a href="../cumplimiento.html" class="mobile-nav-link">Cumplimiento</a>
-    <a href="../sectores.html" class="mobile-nav-link">Sectores</a>
-    <a href="../publicaciones.html" class="mobile-nav-link active">Actualidad y Conocimiento</a>
-    <a href="../contacto.html" class="mobile-nav-link">Contacto</a>
-    <div style="margin-top: 2rem;">
-      <a href="../contacto.html" class="btn btn-gold" style="width: 100%;" data-open-modal="agenda-modal">Agenda una consulta</a>
+<a href="../publicaciones.html" class="mobile-nav-link active">Publicaciones</a>
+<div style="margin-top: 2rem;">
+      <a href="#" class="btn btn-gold" data-open-modal="agenda-modal" style="width: 100%;">Agenda una consulta</a>
     </div>
   </aside>
 
   <main id="main-content" style="padding-top: calc(var(--header-height) + 2rem); padding-bottom: 5rem;">
     <article class="container container-narrow">
       <nav aria-label="Migas de pan" style="margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--color-text-dim);">
-        <a href="../index.html" style="color: var(--color-gold-warm);">Inicio</a> ›
-        <a href="../publicaciones.html" style="color: var(--color-gold-warm);">Actualidad</a> ›
+        <a href="../index.html" style="color: var(--vl-primary-light);">Inicio</a> ›
+        <a href="../publicaciones.html" style="color: var(--color-gold-warm);">Publicaciones</a> ›
         <span>${escapeHtml(article.category || 'Artículo')}</span>
       </nav>
 
@@ -323,7 +312,7 @@ function generateArticleTemplate(article, config) {
           <h2 class="cta-banner-title">¿Desea asesoría especializada para su empresa?</h2>
           <p class="cta-banner-desc">Nuestro equipo de consultores seniors analiza su situación particular con total confidencialidad y rigor estratégico.</p>
         </div>
-        <a href="../contacto.html" class="btn btn-gold" data-open-modal="agenda-modal">
+        <a href="#" class="btn btn-gold" data-open-modal="agenda-modal">
           Agenda una consulta <span class="btn-arrow">›</span>
         </a>
       </div>
@@ -334,7 +323,7 @@ function generateArticleTemplate(article, config) {
     <div class="container footer-grid">
       <div class="footer-col">
         <a href="../index.html" class="header-logo" style="margin-bottom: 1.25rem;">
-          <img src="../assets/images/logo/vl-logo.svg" alt="VL Consulting Partners" width="220" height="42">
+          <img src="../assets/images/logo/vl-logo-header.png" alt="VL Consulting Partners" width="220" height="42">
         </a>
         <p style="font-size: 0.875rem; line-height: 1.6; color: var(--color-text-dim); margin-bottom: 1rem;">
           ${config.brand.shortDescription}
@@ -345,11 +334,8 @@ function generateArticleTemplate(article, config) {
         <h4>Enlaces rápidos</h4>
         <div class="footer-links">
           <a href="../index.html" class="footer-link">Inicio</a>
-          <a href="../nosotros.html" class="footer-link">Nosotros</a>
-          <a href="../sectores.html" class="footer-link">Sectores</a>
-          <a href="../publicaciones.html" class="footer-link">Actualidad</a>
-          <a href="../contacto.html" class="footer-link">Contacto</a>
-        </div>
+<a href="../publicaciones.html" class="footer-link">Publicaciones</a>
+</div>
       </div>
 
       <div class="footer-col">
@@ -492,14 +478,12 @@ function generateCatalogTemplate(articles, config) {
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a href="index.html" class="header-logo" aria-label="VL Consulting Partners - Inicio">
-        <img src="assets/images/logo/vl-logo.svg" alt="VL Consulting Partners Logo" width="220" height="42">
+        <img src="assets/images/logo/vl-logo-header.png" alt="VL Consulting Partners Logo" width="220" height="42">
       </a>
 
-      <nav class="nav-desktop" aria-label="Navegación principal">
+            <nav class="nav-desktop" aria-label="Navegación principal">
         <a href="index.html" class="nav-link">Inicio</a>
-        <a href="nosotros.html" class="nav-link">Nosotros</a>
-        
-        <div class="nav-item-dropdown">
+<div class="nav-item-dropdown">
           <a href="index.html#servicios" class="nav-link" aria-haspopup="true">Servicios ▾</a>
           <div class="dropdown-menu">
             <a href="auditoria.html" class="dropdown-link">Auditoría</a>
@@ -508,14 +492,11 @@ function generateCatalogTemplate(articles, config) {
             <a href="cumplimiento.html" class="dropdown-link">Cumplimiento</a>
           </div>
         </div>
-
-        <a href="sectores.html" class="nav-link">Sectores</a>
-        <a href="publicaciones.html" class="nav-link active">Actualidad</a>
-        <a href="contacto.html" class="nav-link">Contacto</a>
-      </nav>
+<a href="publicaciones.html" class="nav-link active">Publicaciones</a>
+</nav>
 
       <div style="display: flex; align-items: center; gap: 1rem;">
-        <a href="contacto.html" class="btn btn-gold btn-sm" data-open-modal="agenda-modal">
+        <a href="#" class="btn btn-gold btn-sm" data-open-modal="agenda-modal">
           Agenda una consulta <span class="btn-arrow">›</span>
         </a>
         <button class="mobile-menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false">
@@ -528,24 +509,21 @@ function generateCatalogTemplate(articles, config) {
   <div class="mobile-backdrop"></div>
   <aside class="mobile-nav-drawer" aria-label="Menú móvil">
     <a href="index.html" class="mobile-nav-link">Inicio</a>
-    <a href="nosotros.html" class="mobile-nav-link">Nosotros</a>
     <a href="auditoria.html" class="mobile-nav-link">Auditoría</a>
     <a href="impuestos.html" class="mobile-nav-link">Impuestos</a>
     <a href="consultoria.html" class="mobile-nav-link">Consultoría</a>
     <a href="cumplimiento.html" class="mobile-nav-link">Cumplimiento</a>
-    <a href="sectores.html" class="mobile-nav-link">Sectores</a>
     <a href="publicaciones.html" class="mobile-nav-link active">Actualidad y Conocimiento</a>
-    <a href="contacto.html" class="mobile-nav-link">Contacto</a>
     <div style="margin-top: 2rem;">
-      <a href="contacto.html" class="btn btn-gold" style="width: 100%;" data-open-modal="agenda-modal">Agenda una consulta</a>
+      <a href="#" class="btn btn-gold" data-open-modal="agenda-modal" style="width: 100%;">Agenda una consulta</a>
     </div>
   </aside>
 
-  <main id="main-content" style="padding-top: calc(var(--header-height) + 3rem); padding-bottom: 6rem;">
+  <main id="main-content" class="publications-section section-marble" style="padding-top: calc(var(--header-height) + 3rem); padding-bottom: 6rem;">
     <section class="container">
       <div style="text-align: center; margin-bottom: 3.5rem;">
         <span class="section-kicker">CONOCIMIENTO ESTRATÉGICO</span>
-        <h1 class="section-title" style="margin-left: auto; margin-right: auto;">Actualidad y Conocimiento Empresarial</h1>
+        <h1 class="section-title" style="margin-left: auto; margin-right: auto; color: var(--vl-text-dark);">Publicaciones e insights</h1>
         <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
           Perspectivas multidisciplinarias sobre normatividad tributaria, auditoría financiera, gobierno corporativo y tendencias de mercado para líderes de negocio.
         </p>
@@ -561,7 +539,7 @@ function generateCatalogTemplate(articles, config) {
     <div class="container footer-grid">
       <div class="footer-col">
         <a href="index.html" class="header-logo" style="margin-bottom: 1.25rem;">
-          <img src="assets/images/logo/vl-logo.svg" alt="VL Consulting Partners" width="220" height="42">
+          <img src="assets/images/logo/vl-logo-header.png" alt="VL Consulting Partners" width="220" height="42">
         </a>
         <p style="font-size: 0.875rem; line-height: 1.6; color: var(--color-text-dim); margin-bottom: 1rem;">
           ${config.brand.shortDescription}
@@ -571,11 +549,8 @@ function generateCatalogTemplate(articles, config) {
         <h4>Enlaces rápidos</h4>
         <div class="footer-links">
           <a href="index.html" class="footer-link">Inicio</a>
-          <a href="nosotros.html" class="footer-link">Nosotros</a>
-          <a href="sectores.html" class="footer-link">Sectores</a>
-          <a href="publicaciones.html" class="footer-link">Actualidad</a>
-          <a href="contacto.html" class="footer-link">Contacto</a>
-        </div>
+<a href="publicaciones.html" class="footer-link">Publicaciones</a>
+</div>
       </div>
       <div class="footer-col">
         <h4>Servicios</h4>
