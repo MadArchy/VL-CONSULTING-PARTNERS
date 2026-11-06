@@ -57,6 +57,14 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media (max-width: 640px) {
+  h1.section-title,
+  .section-title {
+    font-size: 1.85rem !important;
+    overflow-wrap: break-word;
+  }
+}
+
 .section-subtitle {
   font-size: var(--text-lg);
   line-height: var(--leading-relaxed);

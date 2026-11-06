@@ -1,79 +1,101 @@
 /**
- * VL CONSULTING PARTNERS — Design System V2
- * Identidad: Rojo ejecutivo / Negro / Carbón / Blanco / Mármol
- * AUTHORIZE_VL_CORPORATE_REDESIGN_PHASE_4_LOCAL_ONLY
+ * VL CONSULTING PARTNERS — Design System V5
+ * Identidad: Azul corporativo / Azul profundo / Gris metálico / Grafito / Blanco
+ * Los archivos originales de marca no se modifican. Los alias históricos
+ * apuntan a los tokens nuevos para que el CSS existente herede la paleta.
  */
 
 :root {
-  /* —— Tokens oficiales V2 —— */
-  --vl-primary: #B51226;
-  --vl-primary-dark: #8C0D1D;
-  --vl-primary-light: #D62C43;
+  /* AZULES CORPORATIVOS */
+  --vl-primary: #00558B;
+  --vl-primary-hover: #00416E;
+  --vl-primary-dark: #00416E;
+  --vl-blue-deep: #002C4D;
+  --vl-blue-night: #071E33;
+  --vl-blue-light: #A9DDF5;
+  --vl-primary-light: #A9DDF5;
 
-  --vl-black: #17191D;
-  --vl-charcoal: #282B30;
-  --vl-charcoal-light: #373A40;
+  /* GRISES */
+  --vl-gray-metallic: #85898D;
+  --vl-gray-graphite: #353A40;
+  --vl-gray-light: #E9EDF0;
+  --vl-gray-border: #D7DEE4;
 
+  /* BLANCOS */
   --vl-white: #FFFFFF;
-  --vl-off-white: #F8F8F6;
-  --vl-marble: #E9EAEC;
+  --vl-off-white: #F7F9FB;
 
-  --vl-text-dark: #202227;
-  --vl-text-muted: #626770;
-  --vl-text-light: #F8F8F6;
+  /* TEXTO */
+  --vl-text-primary: #071E33;
+  --vl-text-secondary: #505B65;
+  --vl-text-on-dark: #FFFFFF;
+  --vl-text-dark: #071E33;
+  --vl-text-muted: #505B65;
+  --vl-text-light: #FFFFFF;
 
-  --vl-border-light: #DFE1E4;
-  --vl-border-dark: #494C52;
+  /* INTERACCIONES */
+  --vl-focus: #00558B;
 
-  --vl-focus: #B51226;
+  /* FONDOS */
+  --vl-header-bg: #FFFFFF;
+  --vl-footer-bg: #071E33;
+  --vl-section-light: #F7F9FB;
+  --vl-card-light: #FFFFFF;
+  --vl-card-dark: #002C4D;
 
-  /* —— Alias de compatibilidad (componentes existentes) —— */
-  --color-primary-navy: var(--vl-black);
-  --color-corporate-blue: var(--vl-charcoal);
+  /* Alias de compatibilidad */
+  --vl-black: #071E33;
+  --vl-charcoal: #002C4D;
+  --vl-charcoal-light: #0A3D66;
+  --vl-marble: #E9EDF0;
+  --vl-border-light: #D7DEE4;
+  --vl-border-dark: #1C4A68;
+
+  --color-primary-navy: var(--vl-blue-night);
+  --color-corporate-blue: var(--vl-blue-deep);
   --color-corporate-blue-light: var(--vl-charcoal-light);
-  --color-deep-black: var(--vl-black);
-  --color-deep-navy: #111316;
+  --color-deep-black: var(--vl-blue-night);
+  --color-deep-navy: var(--vl-blue-deep);
 
   --color-crimson: var(--vl-primary);
-  --color-crimson-bright: var(--vl-primary-light);
-  --color-crimson-dark: var(--vl-primary-dark);
-  --color-crimson-soft: rgba(181, 18, 38, 0.16);
+  --color-crimson-bright: var(--vl-blue-light);
+  --color-crimson-dark: var(--vl-primary-hover);
+  --color-crimson-soft: color-mix(in srgb, var(--vl-primary) 16%, transparent);
 
-  /* Acento principal = rojo (reemplaza dorado) */
   --color-gold-premium: var(--vl-primary);
-  --color-gold-warm: var(--vl-primary-light);
-  --color-gold-light: #F6D5DA;
-  --color-gold-dark: var(--vl-primary-dark);
-  --color-gold-glow: rgba(181, 18, 38, 0.22);
-  --color-gold-border: rgba(181, 18, 38, 0.35);
+  --color-gold-warm: var(--vl-blue-light);
+  --color-gold-light: #D6EEF8;
+  --color-gold-dark: var(--vl-primary-hover);
+  --color-gold-glow: color-mix(in srgb, var(--vl-primary) 22%, transparent);
+  --color-gold-border: color-mix(in srgb, var(--vl-primary) 35%, transparent);
 
   --color-accent: var(--vl-primary);
-  --color-accent-hover: var(--vl-primary-light);
-  --color-accent-dark: var(--vl-primary-dark);
+  --color-accent-hover: var(--vl-primary-hover);
+  --color-accent-dark: var(--vl-blue-deep);
 
   --color-ivory: var(--vl-off-white);
   --color-white: var(--vl-white);
-  --color-marble: var(--vl-marble);
-  --color-wood: #C4A574;
-  --color-wood-dark: #9A7A4F;
-  --color-surface-dark: var(--vl-charcoal);
-  --color-surface-card: var(--vl-charcoal-light);
-  --color-surface-hover: #42464D;
+  --color-marble: var(--vl-gray-light);
+  --color-wood: var(--vl-gray-metallic);
+  --color-wood-dark: var(--vl-gray-graphite);
+  --color-surface-dark: var(--vl-blue-deep);
+  --color-surface-card: var(--vl-card-dark);
+  --color-surface-hover: var(--vl-charcoal-light);
 
-  --color-text-main-light: var(--vl-text-light);
-  --color-text-muted-light: #B5B8BE;
-  --color-text-dim: #8B9098;
-  --color-text-main-dark: var(--vl-text-dark);
-  --color-text-body-dark: #3A3E45;
-  --color-text-muted-dark: var(--vl-text-muted);
-  --color-border-dark: rgba(255, 255, 255, 0.1);
-  --color-border-card: rgba(181, 18, 38, 0.28);
-  --color-border-light: var(--vl-border-light);
+  --color-text-main-light: var(--vl-text-on-dark);
+  --color-text-muted-light: #C5D0D8;
+  --color-text-dim: var(--vl-gray-metallic);
+  --color-text-main-dark: var(--vl-text-primary);
+  --color-text-body-dark: #2C3A46;
+  --color-text-muted-dark: var(--vl-text-secondary);
+  --color-border-dark: rgba(255, 255, 255, 0.12);
+  --color-border-card: color-mix(in srgb, var(--vl-primary) 28%, transparent);
+  --color-border-light: var(--vl-gray-border);
 
-  --color-success: #2F7D4F;
-  --color-warning: #C4922A;
-  --color-error: var(--vl-primary);
-  --color-info: #4A5A6A;
+  --color-success: #1F7A4D;
+  --color-warning: #8A6A1E;
+  --color-error: #8E2F2F;
+  --color-info: var(--vl-primary);
 
   --font-serif: 'Cinzel', 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-sans: 'Plus Jakarta Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -128,11 +150,11 @@
   --radius-xl: 16px;
   --radius-pill: 9999px;
 
-  --shadow-sm: 0 1px 3px rgba(23, 25, 29, 0.08);
-  --shadow-md: 0 6px 18px rgba(23, 25, 29, 0.12);
-  --shadow-lg: 0 14px 36px rgba(23, 25, 29, 0.22);
-  --shadow-gold: 0 4px 18px rgba(181, 18, 38, 0.28);
-  --shadow-gold-hover: 0 8px 28px rgba(181, 18, 38, 0.4);
+  --shadow-sm: 0 1px 3px rgba(7, 30, 51, 0.08);
+  --shadow-md: 0 8px 24px rgba(7, 30, 51, 0.1);
+  --shadow-lg: 0 16px 40px rgba(7, 30, 51, 0.16);
+  --shadow-gold: 0 4px 16px color-mix(in srgb, var(--vl-primary) 28%, transparent);
+  --shadow-gold-hover: 0 8px 24px color-mix(in srgb, var(--vl-primary) 40%, transparent);
 
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);

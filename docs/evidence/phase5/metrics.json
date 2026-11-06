@@ -1,0 +1,75 @@
+{
+  "report": [
+    {
+      "name": "homepage-desktop-1440.png",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflow": 0,
+      "url": "http://localhost:3000/"
+    },
+    {
+      "name": "homepage-1024.png",
+      "scrollWidth": 1024,
+      "clientWidth": 1024,
+      "overflow": 0,
+      "url": "http://localhost:3000/"
+    },
+    {
+      "name": "homepage-768.png",
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "overflow": 0,
+      "url": "http://localhost:3000/"
+    },
+    {
+      "name": "homepage-mobile-375.png",
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "overflow": 0,
+      "url": "http://localhost:3000/"
+    },
+    {
+      "name": "servicios-mobile-375.png",
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "overflow": 0,
+      "url": "http://localhost:3000/"
+    },
+    {
+      "name": "servicios-desktop-1440.png",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflow": 0,
+      "url": "http://localhost:3000/"
+    },
+    {
+      "name": "publicaciones-desktop-1440.png",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflow": 0,
+      "url": "http://localhost:3000/publicaciones.html"
+    },
+    {
+      "name": "contacto-desktop-1440.png",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflow": 0,
+      "url": "http://localhost:3000/contacto.html"
+    },
+    {
+      "name": "contacto-mobile-375.png",
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "overflow": 0,
+      "url": "http://localhost:3000/contacto.html"
+    },
+    {
+      "name": "auditoria-desktop-1440.png",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflow": 0,
+      "url": "http://localhost:3000/auditoria.html"
+    }
+  ],
+  "consoleErrors": []
+}

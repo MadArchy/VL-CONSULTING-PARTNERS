@@ -20,7 +20,9 @@
   transition: all var(--transition-normal);
   text-decoration: none;
   cursor: pointer;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
+  min-width: 0;
 }
 
 .btn-sm {
@@ -71,8 +73,8 @@
 }
 
 .btn-outline:hover {
-  background: rgba(181, 18, 38, 0.15);
-  border-color: var(--vl-primary-light);
+  background: color-mix(in srgb, var(--vl-blue-light) 16%, transparent);
+  border-color: var(--vl-blue-light);
   color: var(--vl-white);
   transform: translateY(-2px);
 }
@@ -84,8 +86,8 @@
 }
 
 .btn-outline-dark:hover {
-  background: var(--vl-black);
-  color: var(--vl-text-light);
+  background: var(--vl-primary);
+  color: var(--vl-text-on-dark);
   border-color: var(--vl-primary);
 }
 
@@ -117,8 +119,8 @@
 }
 
 .service-card:nth-child(even) {
-  background: var(--vl-charcoal);
-  border-color: var(--vl-border-dark);
+  background: var(--vl-card-dark);
+  border-color: color-mix(in srgb, var(--vl-blue-light) 25%, var(--vl-card-dark));
 }
 
 .service-card:nth-child(even) .service-card-title {
@@ -146,8 +148,8 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-md);
-  background: rgba(181, 18, 38, 0.1);
-  border: 1px solid rgba(181, 18, 38, 0.28);
+  background: color-mix(in srgb, var(--vl-primary) 10%, white);
+  border: 1px solid color-mix(in srgb, var(--vl-primary) 28%, white);
   color: var(--vl-primary);
   margin-bottom: var(--spacing-5);
   margin-top: var(--spacing-4);
@@ -155,12 +157,13 @@
 }
 
 .service-card:nth-child(even) .service-card-icon {
-  color: var(--vl-primary-light);
-  background: rgba(181, 18, 38, 0.18);
+  color: var(--vl-white);
+  background: color-mix(in srgb, var(--vl-white) 10%, transparent);
+  border-color: color-mix(in srgb, var(--vl-white) 28%, transparent);
 }
 
 .service-card:hover .service-card-icon {
-  background: rgba(181, 18, 38, 0.2);
+  background: color-mix(in srgb, var(--vl-primary) 16%, white);
   border-color: var(--vl-primary);
   transform: scale(1.05);
 }
@@ -198,8 +201,13 @@
   margin-top: auto;
 }
 
-.service-card:nth-child(even) .service-card-action {
-  color: var(--vl-primary-light);
+.service-card:nth-child(even) .service-card-action,
+.service-card:nth-child(even) .service-card-action .action-arrow {
+  color: var(--vl-blue-light);
+}
+
+.service-card:nth-child(even):hover .service-card-action {
+  color: var(--vl-white);
 }
 
 .service-card-action .action-arrow {
@@ -248,7 +256,7 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-sm);
-  background: rgba(181, 18, 38, 0.12);
+  background: color-mix(in srgb, var(--vl-primary) 12%, white);
   color: var(--vl-primary);
   flex-shrink: 0;
 }
@@ -314,7 +322,7 @@
     right: 0;
     height: 80%;
     width: 1px;
-    background: rgba(181, 18, 38, 0.35);
+    background: var(--vl-gray-metallic);
   }
 }
 
@@ -324,7 +332,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--vl-primary-light);
+  color: var(--vl-primary);
   margin-bottom: var(--spacing-4);
 }
 
@@ -337,46 +345,69 @@
   font-family: var(--font-serif);
   font-size: var(--text-xl);
   font-weight: 700;
-  color: var(--color-text-main-light);
+  color: var(--vl-text-primary);
   margin-bottom: var(--spacing-2);
 }
 
 .pillar-desc {
   font-size: var(--text-sm);
   line-height: var(--leading-relaxed);
-  color: var(--color-text-muted-light);
+  color: var(--vl-text-secondary);
 }
 
 /* ==========================================================================
    Banner CTA Pre-Footer (Mockup: Hablemos de sus objetivos)
    ========================================================================== */
 .cta-banner {
-  background: linear-gradient(135deg, rgba(23, 25, 29, 0.94) 0%, rgba(40, 43, 48, 0.9) 100%),
-              url('../images/cta/cta-executive-desk.jpg') center/cover no-repeat;
-  border: 1px solid var(--vl-border-dark);
+  background: var(--vl-blue-deep);
+  border: 1px solid color-mix(in srgb, var(--vl-blue-light) 22%, transparent);
   border-radius: var(--radius-lg);
-  padding: var(--spacing-10) var(--spacing-8);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-6);
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
   box-shadow: var(--shadow-lg);
   position: relative;
   overflow: hidden;
 }
 
+.cta-banner-media {
+  min-height: 220px;
+  position: relative;
+}
+
+.cta-banner-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+  object-position: center;
+}
+
 @media (min-width: 768px) {
   .cta-banner {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--spacing-12) var(--spacing-10);
+    grid-template-columns: 1.3fr 0.7fr;
+    align-items: stretch;
+  }
+
+  .cta-banner-media {
+    min-height: 100%;
   }
 }
 
 .cta-banner-content {
-  border-left: 3px solid var(--vl-primary);
-  padding-left: var(--spacing-6);
-  max-width: 680px;
+  border-left: 3px solid var(--vl-blue-light);
+  padding: var(--spacing-10) var(--spacing-8);
+  max-width: none;
+}
+
+.cta-banner-content .btn {
+  margin-top: var(--spacing-6);
+}
+
+.section-cta {
+  background: var(--vl-blue-deep);
+  color: var(--vl-text-on-dark);
 }
 
 .cta-banner-title {
@@ -420,11 +451,13 @@
 .form-select,
 .form-textarea {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: 0.85rem 1rem;
-  background: rgba(23, 25, 29, 0.65);
-  border: 1px solid var(--vl-border-dark);
+  background: var(--vl-white);
+  border: 1px solid var(--vl-gray-border);
   border-radius: var(--radius-sm);
-  color: var(--vl-text-light);
+  color: var(--vl-text-primary);
   font-size: var(--text-base);
   transition: all var(--transition-fast);
 }
@@ -442,8 +475,8 @@
 .form-textarea:focus {
   outline: none;
   border-color: var(--vl-focus);
-  box-shadow: 0 0 0 3px rgba(181, 18, 38, 0.28);
-  background: rgba(40, 43, 48, 0.85);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--vl-focus) 28%, transparent);
+  background: var(--vl-white);
 }
 
 .section-light .form-input:focus,
@@ -496,7 +529,7 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(23, 25, 29, 0.88);
+  background: color-mix(in srgb, var(--vl-blue-night) 82%, transparent);
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
@@ -514,8 +547,9 @@
 }
 
 .modal-dialog {
-  background: var(--vl-charcoal);
-  border: 1px solid var(--vl-border-dark);
+  background: var(--vl-off-white);
+  color: var(--vl-text-primary);
+  border: 1px solid var(--vl-gray-border);
   border-radius: var(--radius-lg);
   width: 100%;
   max-width: 620px;
@@ -546,9 +580,35 @@
   transition: all var(--transition-fast);
 }
 
+.modal-dialog .form-label,
+.modal-dialog h3,
+.modal-dialog p {
+  color: var(--vl-text-primary);
+}
+
+.modal-dialog .form-checkbox-group,
+.modal-dialog .form-checkbox-group label {
+  color: var(--vl-text-secondary);
+}
+
+.modal-close-btn {
+  color: var(--vl-gray-graphite);
+}
+
 .modal-close-btn:hover {
-  color: var(--vl-primary-light);
-  background: rgba(255, 255, 255, 0.05);
+  color: var(--vl-primary);
+  background: color-mix(in srgb, var(--vl-primary) 8%, white);
+}
+
+.cta-banner:not(:has(.cta-banner-media)) {
+  padding: var(--spacing-10) var(--spacing-8);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .cta-banner:not(:has(.cta-banner-media)) {
+    grid-template-columns: 1fr auto;
+  }
 }
 
 /* Botón flotante de WhatsApp */

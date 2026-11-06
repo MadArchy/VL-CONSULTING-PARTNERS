@@ -110,10 +110,10 @@
 
 @keyframes subtleGoldPulse {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(181, 18, 38, 0.2);
+    box-shadow: 0 0 15px color-mix(in srgb, var(--vl-primary) 20%, transparent);
   }
   50% {
-    box-shadow: 0 0 25px rgba(181, 18, 38, 0.35);
+    box-shadow: 0 0 25px color-mix(in srgb, var(--vl-primary) 35%, transparent);
   }
 }
 
@@ -131,7 +131,7 @@ body.has-intro {
   z-index: 4000;
   display: grid;
   place-items: center;
-  background: #17191D;
+  background: var(--vl-blue-night);
   animation: introLeave 0.7s cubic-bezier(0.16, 1, 0.3, 1) 2s forwards;
 }
 
