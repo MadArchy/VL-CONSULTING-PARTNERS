@@ -7,6 +7,7 @@ import { initModal } from './modules/modal.js';
 import { initContactForms } from './modules/contact-form.js';
 import { initWhatsApp } from './modules/whatsapp.js';
 import { initAnimations } from './modules/animations.js';
+import { initIntro } from './modules/intro.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   // Cargar configuración institucional centralizada si está disponible
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initModal();
   initContactForms();
   initWhatsApp(siteConfig);
+  initIntro();
   initAnimations();
 
   // Actualizar año dinámico en footer

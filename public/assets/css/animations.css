@@ -121,6 +121,62 @@
   animation: subtleGoldPulse 4s infinite ease-in-out;
 }
 
+body.has-intro {
+  overflow: hidden;
+}
+
+.page-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  display: grid;
+  place-items: center;
+  background: #17191D;
+  animation: introLeave 0.7s cubic-bezier(0.16, 1, 0.3, 1) 2s forwards;
+}
+
+.page-intro img {
+  width: min(460px, 74vw);
+  height: auto;
+  animation:
+    introMark 1.05s cubic-bezier(0.16, 1, 0.3, 1) both,
+    introMarkLeave 0.7s cubic-bezier(0.16, 1, 0.3, 1) 2s forwards;
+}
+
+body.has-intro .hero-bg-image,
+body.has-intro .hero-title,
+body.has-intro .hero-divider,
+body.has-intro .hero-description,
+body.has-intro .hero-actions,
+body.has-intro .site-header .header-logo img {
+  animation: none;
+}
+
+@keyframes introMark {
+  from {
+    opacity: 0;
+    transform: scale(0.86);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes introMarkLeave {
+  to {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes introLeave {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -137,5 +193,13 @@
 
   .fade-in-element .gold-divider {
     transform: none !important;
+  }
+
+  .page-intro {
+    display: none !important;
+  }
+
+  body.has-intro {
+    overflow: visible;
   }
 }
