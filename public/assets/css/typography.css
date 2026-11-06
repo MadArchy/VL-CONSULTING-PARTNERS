@@ -2,7 +2,7 @@
  * VL CONSULTING PARTNERS - Tipografía y Jerarquía
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('../fonts/fonts.css');
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);

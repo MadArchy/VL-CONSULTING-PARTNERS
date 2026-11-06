@@ -23,10 +23,10 @@ Como parte de los compromisos de excelencia institucional de **VL Consulting Par
 Definida en `public/_headers`:
 
 ```http
-Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'none';
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';
 ```
 
-- **Restricción de Fuentes:** Exclusivamente cargadas desde Google Fonts de manera segura (`https://fonts.gstatic.com`).
+- **Restricción de Fuentes:** Las familias tipográficas se sirven desde el propio sitio (`public/assets/fonts`).
 - **Restricción de Conexiones:** El frontend solo permite llamadas seguras mediante `fetch` al propio dominio o al endpoint configurado de la API corporativa.
 - **Sin Dependencias de Terceros Inseguras:** Cero scripts de rastreo invasivos ni librerías de CDN externas vulnerables.
 

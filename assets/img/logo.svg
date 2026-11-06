@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-labelledby="logoTitle logoDesc">
-  <title id="logoTitle">VL Consulting Partners</title>
-  <desc id="logoDesc">Monograma VL con diagonal dorada sobre fondo azul marino</desc>
-  <rect width="80" height="80" rx="6" fill="#081C30"/>
-  <path d="M0 62 L80 18" stroke="#C9A45A" stroke-width="5" fill="none"/>
-  <text x="14" y="48" fill="#F7F5F0" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" letter-spacing="1">VL</text>
-</svg>

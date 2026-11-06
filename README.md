@@ -49,9 +49,12 @@ Dominio y contacto oficiales se configuran solo en `content/site-config.json` (n
 
 - `content/`: Artículos de análisis en Markdown y archivo central de configuración `site-config.json`.
 - `docs/`: Documentación de arquitectura, manual de publicaciones, guía de despliegue e informe de seguridad.
-- `public/`: Directorio raíz de producción listo para servir en Cloudflare, Nginx, Apache o cualquier CDN estática.
-- `scripts/`: Herramientas ligeras en Node.js (`build.js`, `serve.js`, `validate.js`).
-- `src/`: Código fuente modular de estilos CSS y módulos JavaScript.
+- `public/`: Sitio que se publica. Cloudflare, Netlify y GitHub Pages deben servir esta carpeta, no la raíz del repositorio.
+- `public/assets/fonts/`: Tipografías Cinzel, Playfair Display y Plus Jakarta Sans, incluidas en el proyecto.
+- `public/assets/images/`: Logotipo, fotografía principal y demás imágenes del sitio.
+- `brand/`: Archivos maestros del logotipo.
+- `scripts/`: Herramientas en Node.js (`build.js`, `serve.js`, `validate.js`).
+- `src/`: Código fuente de estilos CSS y módulos JavaScript. El servidor local sirve la copia que está en `public/`.
 
 ---
 
